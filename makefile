@@ -2,20 +2,22 @@ LINUX=1
 
 # 源代码所在目录（包括所有子目录）
 VPATH=./ \
-	  ./xor/ \
+	  ./xor \
+	  ./mnist \
+	  ./lenet
 
-EXEC=main.exe
+EXEC=lumos
 OBJDIR=./obj/
 
 CC=gcc
 
-LDFLAGS= -L/usr/local/lumos/lib -llumops -llumgraph -llumos
-COMMON= -Ixor -I/usr/local/lumos/include/ -std=c99 -fopenmp
+LDFLAGS= -L/usr/local/lumos/lib -llumos
+COMMON= -Ixor -Imnist -Ilenet -I/usr/local/lumos/include/ -std=c99 -fopenmp
 CFLAGS=-Wall -Wno-unused-result -Wno-unknown-pragmtensor -Wfatal-errors
 
-OBJ=	xor.o \
+OBJ=	xor.o mnist.o lenet.o \
 
-EXECOBJA=main.o
+EXECOBJA=lumos.o
 
 EXECOBJ = $(addprefix $(OBJDIR), $(EXECOBJA))
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
@@ -38,4 +40,4 @@ backup:
 
 clean:
 	rm -rf obj
-	rm -f main.exe
+	rm -f lumos

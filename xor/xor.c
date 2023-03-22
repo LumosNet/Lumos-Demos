@@ -15,13 +15,12 @@ void xor_process_test_information(char **label, float *truth, float *predict, fl
     fprintf(stderr, "Loss:    %f\n\n", loss);
 }
 
-void xor()
-{
+void xor () {
     Graph *graph = create_graph("Lumos", 5);
     Layer *l1 = make_im2col_layer(1);
-    Layer *l2 = make_connect_layer(4, 1, "logistic");
-    Layer *l3 = make_connect_layer(2, 1, "logistic");
-    Layer *l4 = make_connect_layer(1, 1, "logistic");
+    Layer *l2 = make_connect_layer(4, 1, "relu");
+    Layer *l3 = make_connect_layer(2, 1, "relu");
+    Layer *l4 = make_connect_layer(1, 1, "relu");
     Layer *l5 = make_mse_layer(1);
     append_layer2grpah(graph, l1);
     append_layer2grpah(graph, l2);
@@ -29,15 +28,16 @@ void xor()
     append_layer2grpah(graph, l4);
     append_layer2grpah(graph, l5);
 
-    Session *sess = create_session();
+    Initializer init = he_initializer();
+    Session *sess = create_session(init);
     bind_graph(sess, graph);
-    create_train_scene(sess, 1, 2, 1, 1, 1, xor_label2truth, "/usr/local/lumos/bin/demos/xor/data.txt", "/usr/local/lumos/bin/demos/xor/label.txt");
-    init_train_scene(sess, 200, 4, 2, NULL);
-    session_train(sess, 10, "/home/lumos/lumos.w");
+    create_train_scene(sess, 1, 2, 1, 1, 1, xor_label2truth, "./data/xor/data.txt", "./data/xor/label.txt");
+    init_train_scene(sess, 500, 4, 2, NULL);
+    session_train(sess, 0.01, "./lumos.w");
 
-    Session *t_sess = create_session();
+    Session *t_sess = create_session(init);
     bind_graph(t_sess, graph);
-    create_test_scene(t_sess, 1, 2, 1, 1, 1, xor_label2truth, "/usr/local/lumos/bin/demos/xor/test.txt", "/usr/local/lumos/bin/demos/xor/label.txt");
-    init_test_scene(t_sess, "/home/lumos/lumos.w");
+    create_test_scene(t_sess, 1, 2, 1, 1, 1, xor_label2truth, "./data/xor/test.txt", "./data/xor/label.txt");
+    init_test_scene(t_sess, "./lumos.w");
     session_test(t_sess, xor_process_test_information);
 }
