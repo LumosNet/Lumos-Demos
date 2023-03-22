@@ -11,9 +11,9 @@
 
 名                    | 博客链接                                                                                                                                                                           | 数据集
 ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------
-**LeNet5**                 | [<img src="https://img.shields.io/badge/Lumos-LeNet5-brightgreen" />](https://github.com/LumosNet/Lumos-Build/raw/main/v0.1.0/lumos_0.1.0_linux_cpu.run)           | [MNIST](https://pan.baidu.com/s/1Qm7HRy0oVx-eiVl0jBxC5A?pwd=6bxh)
-**MNIST**                 | [<img src="https://img.shields.io/badge/Lumos-Mnist-brightgreen" />](https://github.com/LumosNet/Lumos-Build/raw/main/v0.1.0/lumos_0.1.0_linux_gpu.run)           | [MNIST](https://pan.baidu.com/s/1Qm7HRy0oVx-eiVl0jBxC5A?pwd=6bxh)
-**XOR**                 | [<img src="https://img.shields.io/badge/Lumos-Xor-brightgreen" />](https://github.com/LumosNet/Lumos-Build/raw/main/v0.1.0/lumos_0.1.0_linux_gpu.run)           | [XOR](https://pan.baidu.com/s/1KMGSVsDKPFy7U9Wnfxd7yw?pwd=ec2o)
+**LeNet5**                 | [<img src="https://img.shields.io/badge/Lumos-LeNet5-brightgreen" />]()           | [MNIST](https://pan.baidu.com/s/1Qm7HRy0oVx-eiVl0jBxC5A?pwd=6bxh)
+**MNIST**                 | [<img src="https://img.shields.io/badge/Lumos-Mnist-brightgreen" />]()           | [MNIST](https://pan.baidu.com/s/1Qm7HRy0oVx-eiVl0jBxC5A?pwd=6bxh)
+**XOR**                 | [<img src="https://img.shields.io/badge/Lumos-Xor-brightgreen" />]()           | [XOR](https://pan.baidu.com/s/1KMGSVsDKPFy7U9Wnfxd7yw?pwd=ec2o)
 
 ## 运行Demos
 首先您需要安装lumos框架，最新安装问价如下
