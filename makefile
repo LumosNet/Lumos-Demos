@@ -1,12 +1,11 @@
 LINUX=1
-GPU=1
+GPU=0
 
 # 源代码所在目录（包括所有子目录）
-
 VPATH=./ \
 	  ./lumos/lenet \
-	  ./lumoe/mnist \
-	  ./lumos/ xor
+	  ./lumos/mnist \
+	  ./lumos/xor
 
 COMMON=-Ilumos/lenet \
 	   -Ilumos/mnist \
@@ -26,7 +25,7 @@ COMMON+= -DGPU
 CFLAGS+= -DGPU
 endif
 
-OBJ=	xor.o mnist.o lenet.o \
+OBJ=xor.o mnist.o lenet.o
 
 EXECOBJA=lumos.o
 
@@ -49,4 +48,4 @@ obj:
 
 clean:
 	rm -rf obj
-	rm -f lumos
+	rm -f lumos.exe
