@@ -39,15 +39,23 @@ void lenet() {
     append_layer2grpah(graph, l9);
 
     Initializer init = he_initializer();
+#ifdef GPU
+    Session *sess = create_session("gpu", init);
+#else
     Session *sess = create_session(init);
+#endif
     bind_graph(sess, graph);
     create_train_scene(sess, 32, 32, 1, 1, 10, lenet_label2truth, "./data/mnist/train.txt", "./data/mnist/train_label.txt");
     init_train_scene(sess, 500, 16, 16, NULL);
-    session_train(sess, 0.1, "./lumos.w");
+    session_train(sess, 0.1, "./lenetw.w");
 
+#ifdef GPU
+    Session *t_sess = create_session("gpu", init);
+#else
     Session *t_sess = create_session(init);
+#endif
     bind_graph(t_sess, graph);
     create_test_scene(t_sess, 32, 32, 1, 1, 10, lenet_label2truth, "./data/mnist/test.txt", "./data/mnist/test_label.txt");
-    init_test_scene(t_sess, "./lumos.w");
+    init_test_scene(t_sess, "./lenetw.w");
     session_test(t_sess, lenet_process_test_information);
 }

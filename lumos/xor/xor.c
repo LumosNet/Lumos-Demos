@@ -29,15 +29,23 @@ void xor () {
     append_layer2grpah(graph, l5);
 
     Initializer init = he_initializer();
+#ifdef GPU
+    Session *sess = create_session("gpu", init);
+#else
     Session *sess = create_session(init);
+#endif
     bind_graph(sess, graph);
     create_train_scene(sess, 1, 2, 1, 1, 1, xor_label2truth, "./data/xor/data.txt", "./data/xor/label.txt");
     init_train_scene(sess, 500, 4, 2, NULL);
-    session_train(sess, 0.01, "./lumos.w");
+    session_train(sess, 0.01, "./xorw.w");
 
+#ifdef GPU
+    Session *t_sess = create_session("gpu", init);
+#else
     Session *t_sess = create_session(init);
+#endif
     bind_graph(t_sess, graph);
     create_test_scene(t_sess, 1, 2, 1, 1, 1, xor_label2truth, "./data/xor/test.txt", "./data/xor/label.txt");
-    init_test_scene(t_sess, "./lumos.w");
+    init_test_scene(t_sess, "./xorw.w");
     session_test(t_sess, xor_process_test_information);
 }

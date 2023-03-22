@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <lumos.h>
+#include "lumos.h"
 
 #ifdef __cplusplus
 extern "C" {
