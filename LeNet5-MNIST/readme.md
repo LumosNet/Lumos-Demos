@@ -30,7 +30,7 @@ Mse             Layer    :    [output=   1]
 
 MNIST（modified national institute of standard and technology）数据集是由Yann LeCun及其同事于1994年创建一个大型手写数字数据库（包含0~9十个数字）。MNIST数据集的原始数据来源于美国国家标准和技术研究院（national institute of standard and technology）的两个数据集：special database 1和special database 3。它们分别由NIST的员工和美国高中生手写的0-9的数字组成。原始的这两个数据集由128×128像素的黑白图像组成。LeCun等人将其进行归一化和尺寸调整后得到的是28×28的灰度图像
 
-![../images/6_22.png]()
+![](../images/6_22.png)
 
 
 
@@ -285,6 +285,6 @@ Detct Classification: 910/946  0.96
 
 
 
-![../images/mnist_loss.png]()
+![](../images/mnist_loss.png)
 
 在测试数据集上表现良好，获得96%的正确率
