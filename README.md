@@ -10,7 +10,8 @@
 
 | 说明     | 链接                                                         |
 | -------- | ------------------------------------------------------------ |
-| LeNet5-MNIST | [<img src="https://img.shields.io/badge/Lumos-LeNet5-brightgreen" />](https://lumos-docs.readthedocs.io/en/latest/) |
+| DNN-XOR      | [<img src="https://img.shields.io/badge/Lumos-LeNet5-brightgreen" />](https://github.com/LumosNet/Lumos-Demos/tree/main/DNN-XOR)  |
+| LeNet5-MNIST | [<img src="https://img.shields.io/badge/Lumos-LeNet5-brightgreen" />](https://lumos-docs.readthedocs.io/en/latest/)               |
 
 
 ## 联系我们：
