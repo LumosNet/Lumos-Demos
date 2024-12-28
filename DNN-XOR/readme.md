@@ -251,7 +251,7 @@ Loss:0.0135
 Detect Classification: 4/4  1.00
 ```
 
-![](..\images\xor_loss.png)
+![](../images/xor_loss.png)
 
 | 数据   | 测试结果     | 真实标签 | Loss     |
 | ------ | ------------ | -------- | -------- |
