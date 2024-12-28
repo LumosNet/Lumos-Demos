@@ -59,7 +59,7 @@ MNIST（modified national institute of standard and technology）数据集是由
 
 图片中每一个像素值都为正常像素值1~255
 
-![../images/mnist.png]()
+![](../images/mnist.png)
 
 
 
