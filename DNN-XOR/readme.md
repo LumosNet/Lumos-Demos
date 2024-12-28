@@ -140,11 +140,9 @@ init_session(sess, "./data/xor/data.txt", "./data/xor/label.txt");
 ### 创建测试会话和场景
 
 ```c
-Session *t_sess = create_session("cpu", init);
-bind_graph(t_sess, graph);
-create_test_scene(t_sess, 1, 2, 1, 1, 1, xor_label2truth, "./xor/test.txt", 		                       "./xor/label.txt");
-init_test_scene(t_sess, "./xorw.w");
-session_test(t_sess, xor_process_test_information);
+Session *sess = create_session(g, 1, 2, 1, 2, type, path);
+set_detect_params(sess);
+init_session(sess, "./data/xor/data.txt", "./data/xor/label.txt");
 ```
 
 
